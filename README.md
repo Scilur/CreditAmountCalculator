@@ -41,4 +41,4 @@ The Maximum Credit Amount is calculated on the basis of the Score:
 | 61 | 80 | 10000.00 |
 | 81 | 100 | 50000.00 |
 
-###Result of calculations must contain the explanation what points were taken into account.
+### Result of calculations must contain the explanation what points were taken into account.
