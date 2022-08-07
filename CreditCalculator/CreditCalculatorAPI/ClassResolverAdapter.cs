@@ -19,5 +19,11 @@ namespace CreditCalculatorAPI
             var result = (T)this.ServiceProvider.GetService(typeof(T));
             return result;
         }
+
+        public object Resolve(Type type)
+        {
+            var result = this.ServiceProvider.GetService(type);
+            return result;
+        }
     }
 }

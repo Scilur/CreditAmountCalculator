@@ -31,17 +31,7 @@ namespace CreditCalculatorTest
 
             // Create Credit Calculator from set of rules (it can be done on the basic of configuration from DB)
             var creditCalculator = CreditCalculatorBuilder.Set(CustomIoc.Container)
-                .AddScoreCalculator<ByAgeScoreCalculator>()
-                .AddScoreCalculator<ByCreditRankScoreCalculator>()
-                .AddScoreCalculator<FamilyExistsAdditionalScoreCalculator>()
-                .AddScoreCalculator<StationarPhoneExistsAdditionalScoreCalculator>()
-                .AddScoreCalculator<HasVisasAdditionalScoreCalculator>()
-                .AddScoreCalculator<HasHouseAdditionalScoreCalculator>()
-                .AddScoreCalculator<HasCarAdditionalScoreCalculator>()
-                .AddScoreCalculator<WasConvictedAdditionalScoreCalculator>()
-                .AddScoreCalculator<HasAnotherCreditAdditionalScoreCalculator>()
-                .SetScoreCorrector<IScoreCorrector>()
-                .SetCreditAmountResolver<ICreditAmountResolver>()
+                .FromConfig(CreditAmountCalculatorConfig.Default)
                 .Build();
 
             // Set test arguments

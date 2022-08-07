@@ -47,7 +47,7 @@ namespace CreditCalculatorTest.Helpers
             return instance;
         }
 
-        private object Resolve(Type srcType)
+        public object Resolve(Type srcType)
         {
             object instance = null;
 

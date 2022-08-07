@@ -54,17 +54,7 @@ namespace CreditCalculatorAPI
                 var classResolver = sp.GetService<IClassResolver>();
 
                 var creditCalculator = CreditCalculatorBuilder.Set(classResolver)
-                    .AddScoreCalculator<ByAgeScoreCalculator>()
-                    .AddScoreCalculator<ByCreditRankScoreCalculator>()
-                    .AddScoreCalculator<FamilyExistsAdditionalScoreCalculator>()
-                    .AddScoreCalculator<StationarPhoneExistsAdditionalScoreCalculator>()
-                    .AddScoreCalculator<HasVisasAdditionalScoreCalculator>()
-                    .AddScoreCalculator<HasHouseAdditionalScoreCalculator>()
-                    .AddScoreCalculator<HasCarAdditionalScoreCalculator>()
-                    .AddScoreCalculator<WasConvictedAdditionalScoreCalculator>()
-                    .AddScoreCalculator<HasAnotherCreditAdditionalScoreCalculator>()
-                    .SetScoreCorrector<IScoreCorrector>()
-                    .SetCreditAmountResolver<ICreditAmountResolver>()
+                    .FromConfig(CreditAmountCalculatorConfig.Default)
                     .Build();
 
                 return creditCalculator;
